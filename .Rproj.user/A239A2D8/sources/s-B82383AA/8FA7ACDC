@@ -5,14 +5,14 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1777460149",
+    "hash" : "0",
     "id" : "8FA7ACDC",
-    "lastKnownWriteTime" : 1558346124,
-    "last_content_update" : 1558346124833,
+    "lastKnownWriteTime" : 1558347577,
+    "last_content_update" : 1558347577453,
     "path" : "~/Desktop/WERKSTATT/raspberry/braillepi/braillepi_manual/braillepi-manual/index.Rmd",
     "project_path" : "index.Rmd",
     "properties" : {
-        "cursorPosition" : "15,0",
+        "cursorPosition" : "13,0",
         "scrollLine" : "0"
     },
     "read_only" : false,
