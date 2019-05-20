@@ -1,0 +1,210 @@
+# basics
+
+
+## hilfe
+
+```
+man befehl
+```
+
+Hier wird die Dokumentation zu einer beliebigen Funktion aufgerufen. 
+Um die Hilfeseite wieder zu verlassen den Buchstaben q eingeben.
+
+## print working directory. Wo bin ich?
+
+```
+pwd
+```
+
+## list files and directories.
+
+```
+ls
+```
+
+ein Element pro Zeile
+```
+ls -1
+```
+
+auch versteckte Files (Dateiname mit vorangestelltem Punkt)
+```
+ls -a
+```
+
+## change directory
+
+```
+cd pfad
+```
+
+Der angegebene Dateipfad kann relativ oder absolut sein. Werden zwei Punkte als Pfad angegeben, wird ins übergeordnete Verzeichnis gewechselt.
+cd ohne pfad welchselt ins home verzeichnis.
+
+## move. Files verschieben bzw. umbenennen.
+
+```
+mv von nach
+```
+
+## copy. Files kopieren.
+
+```
+cp von nach
+```
+
+## remove. Files löschen
+
+Vorsicht! Gelöschte Files können nicht wieder hergestellt werden. 
+Es ist daher besser die Files in den Papierkorb zu verschieben, diese 
+können bei Bedarf (solange der Papierkorb nicht geleert wurde) wieder 
+hergestellt werden.
+
+```
+trash file
+```
+Hier kann statt file auch ein directory angegeben und in den Papierkorb verschoben werden.
+
+Files im Papierkorb können folgendermaßen angezeigt werden:
+
+```
+trash-list
+```
+
+Der Papierkorb wird geleert mit:
+
+```
+trash-empty
+```
+
+Zum wiederherstellen können files entweder manuell wieder 
+aus dem trash folder zurück kopiert oder verschoben werden, bzw. kann man eine trash-operation auch rückgängig machen:
+
+```
+restore-empty
+```
+Hier wird eine "nummerierte" liste der Trash Operationen ausgegeben. Durch Eingabe der entsprechenden Nummer und drücken der Enter Taste wird die 
+Operation rückgängig gemacht.
+
+
+Sollte es trotz der damit verbundenen Gefahren aus irgendwelchen Gründen notwendig sein ein File 
+komplett zu löschen und nicht in den Papierkorb zu verschieben kann das mit nachfolgenden Befehlen 
+gemacht werden. Auch hier steht File für einen (absoluten oder relativen) Filepfad.
+
+```
+rm file
+```
+
+Es kann auch ein gesamtes Verzeichnis gelöscht werden. Hier muss das Argument -r (rekursiv) verwendet werden, um das Verzeichnis 
+samt Inhalt zu löschen.
+
+```
+rm -r directory
+```
+
+## Ordner erstellen
+
+```
+mkdir verzeichnis
+```
+
+## Files oder Verzeichnise finden
+
+```
+find verzeichnis -name suchname
+```
+
+Im aktuellen Verzeichnis suchen:
+```
+find . -name suchname
+```
+
+In home suchen:
+```
+find ~ -name suchname
+```
+
+Case insensitive (ignoriert Groß- und Kleinschreibung):
+
+```
+find verzeichnis -iname suchname
+```
+
+Mit Wilkcard suchen (z.B. alle Textfiles im Verzeichnis)
+
+```
+find verzeichnis -name *.txt
+```
+
+Nur Files ausgeben
+
+```
+find verzeichnis -name suchname -type f
+```
+
+Nur Verzeichnisse ausgeben
+
+```
+find verzeichnis -name suchname -type d
+```
+
+## zip
+
+### mit zip
+
+Packen:
+
+```
+zip zipfile file1 file2 file 3
+```
+Entpacken:
+```
+unzip zipfile
+```
+
+Originale beim Packen nicht im Ordner belassen (move):
+```
+zip -m zipfile file1 file2 file 3
+```
+
+### mit gzip
+
+```
+gzip file
+```
+
+Zippen von Verzeichnissen inkl. aller Inhalte (rekursiv):
+
+```
+gzip -r verzeichnis
+```
+
+Originaldatei soll erhalten bleiben (keep):
+```
+gzip -k file
+```
+
+Entpacken:
+
+```
+gunzip file
+```
+## filetype
+```
+file filename
+```
+
+## als superuser ausführen
+
+```
+sudo befehl
+```
+
+Manche programme muss man als superuser ausführen. Dazu stellt man sudo vor den Aufruf. Beim ersten mal je session wird man dann nach dem Passwort gefragt.
+
+## herunterfahren
+
+```
+sudo shutdown now
+```
+Muss als superuser ausgeführt werden (`sudo`). Statt `now` kann auch anzahl an Minuten oder eine bestimmte Uhrzeit gegeben werden.

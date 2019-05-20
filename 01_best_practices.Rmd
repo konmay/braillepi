@@ -1,0 +1,9 @@
+# Best practices
+
+## Case sensitivity
+
+## Dateipfade
+absolut vs. relativ
+
+## Verzeichnis- und Filenamen
+keine leerzeichen, case sensitivity, Laufende Nummer oder Datum am Anfang, ISO8601 Datumsstandard

@@ -1,0 +1,29 @@
+# PDF, HTML und Word Dokumente erstellen mit Markdown
+
+## Markdown syntax
+
+```
+w3m https://www.markdownguide.org/cheat-sheet/
+```
+```
+![](file.jpg){ width=50% }
+```
+
+## Yaml header
+
+```
+---
+title:
+author:
+date:
+---
+```
+
+## Pandoc
+```
+pandoc document.md -s -o document.docx
+```
+
+```
+pandoc document.md -s -o document.pdf
+```

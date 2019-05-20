@@ -1,0 +1,23 @@
+# Webbrowser
+
+```
+w3m website-url
+```
+
+## Hilfe
+Im Browser öffnet man die Hilfeseite mit `shift + h`, in der alle Tastaturbefehle aufgelistet sind.
+
+## wichtigste Tastaturbefehle
+
+Hilfe: `shift + h`
+Website (URL) aufrufen: `shift + u`
+zurück: `shift + b`
+neuen Tab öffnen: `shift + t`
+link in neuem tab öffnen: `strg + t`
+tabs wechseln: `{` und `}`
+tabs wechseln, Liste: `Esc + t`
+nächster Hyperlink: `Tab`
+suche: `strg + s` dann `n` um zum nächsten Treffer zu gelangen
+Ansicht um einen screen nach unten: `strg + v` oder `+` oder `space`
+Ansicht um einen screen nach obne: `b` oder `-`
+Liste aller Links der Seite `Esc + l`

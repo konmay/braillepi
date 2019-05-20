@@ -1,0 +1,46 @@
+# Mailclient
+
+Öffnen durch den Befehl
+```
+alpine
+```
+
+Nach starten des Programms sollte der Cursor auf "L Folder List" stehen (bzw. vorher das Passwort abgefragt werden, sollte dieses nicht hinterlegt worden sein). In diesem ist auch die Inbox und diverese andere Folder enthalten. Zwei Zeilen darüber befindet sich "C compose message" um eine neue Nachricht zu verfassen. Beide Menüpunkte sind entweder durch hin navigieren und die Enter Taste oder auch über Eingabe der Buchstaben (`L` und `C`) zu öffnen.
+
+Aus den Unterordnern kann man mit `<` wieder jeweils eine Ebene höher navigieren. Außer beim Erstellen von Nachrichten kommt man so auch wieder ins Hauptmenü (bzw. auch durch die Eingabe von `m`)
+
+## Inbox öffnen
+Eingabe von `L` und Navigation zu INBOX (öffnen mit `Enter`) bzw. falls man immer nur die Inbox verwendet auf dem Hauptmenü mit `I` zu den Nachrichten des (aktuellen) Folders gehen. Zur neuesten Mail gelangt man mit Eingabe der Taste `Ende`, mit `Tab` zur nächsten ungelesenen Nachricht.
+
+## Anhang downloaden
+In einer geöffneten Nachricht mit Anhang `v` drücken, dann mit den Pfeiltasten (rauf/runter) zum gewünschten Anhang navigieren und mit `s` speichern (Eingabe des Speicher-Filepfades und `Enter`).
+
+## Nachrichten suchen
+mit der taste `w` dann Eingabe des Suchbegriffs. Klickt man `Enter` hüpft der Cursor zur nächsten passenden Nachricht. Mit abwechselnd `w` und `Enter` kann man so von Nachricht zu Nachricht hüpfen. 
+Wenn man nach Eingabe des Suchbegriffs stattdessen `strg + x` eingibt werden die Nachrichten im "Zoom mode" angezeigt, also jene auf die die Suche passt. Mit `z` kann man dann wieder aus dem Zoom-Mode raus aber auch wieder rein wechseln. In beiden Modi haben die Nachrichten eine Markierung `X` ganz links.
+
+## Nachrichten löschen
+Durch drücken von `d kann eine Nachricht zum löschen markiert werden (bzw. mit u die Markierung wieder aufgehoben werden). Beim schließen von alpine wird gefragt ob markierte Nachrichten gelöscht werden sollen.
+
+Mag man die Nachricht bzw. mehrere markierte Nachrichten gleich im Programm löschen drückt man `x`.
+
+## Mail beantworten
+Cursor auf die zu beantwortende Nachricht stellen und `r` drücken. Es wird nachgefragt, ob der Nachrichten-verlauf inkludiert werden soll - mit `y` bzw `Enter` bestätigen oder mit `n` ablehnen.
+Dann wird nachgefragt, ob allen Empfängern geantwortet werden soll.
+Danach gleich wie eine neue Nachricht erstellen.
+
+## Nachricht erstellen
+
+Im Hauptmenü "C Compose message" auswählen oder mit der Eingabe des Buchstabens `C` öffnen.
+
+Mehrere Empfänger sind mit Komma zu trennen.
+Ein Anhang kann mit `strg + J` ausgewählt werden.
+
+Ab dem Textfeld sind die Menüpunkte anders (fast wie im Texteditor nano).  Mit `strg + x` wird die Nachricht gesendet, mit `strg + z` abgebrochen. Mit `strg + r` kann Text aus einem Textfile eingefügt werden (praktisch zur Verwendung mit Textbausteinen bzw. Standardantworten)
+
+Beim Senden der Abbrechen wird jeweils noch einmal nachgefragt. Beim senden kann man wie üblich `y` und `n` auswählen. Den Abbruch muss man mit `c` für confirm bestätigen.
+
+
+## Alpine beenden
+
+Aus fast allen Ebenen ist alpine durch die Eingabe des Buchstabens `q` gefolgt von Enter zu beenden (Außer man ist gerade dabei eine Nachricht zu verfassen. Diese zuerst abschicken oder mit `strg + C` abbrechen und dann alpine schließen). 

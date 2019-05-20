@@ -1,0 +1,588 @@
+\documentclass[]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Braillepi Manual},
+            pdfauthor={Konrad Mayer},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{natbib}
+\bibliographystyle{apalike}
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Braillepi Manual}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Konrad Mayer}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{2019-05-20}
+
+\usepackage{booktabs}
+\usepackage{amsthm}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{braillepi}{%
+\chapter{Braillepi}\label{braillepi}}
+
+\hypertarget{best-practices}{%
+\chapter{Best practices}\label{best-practices}}
+
+\hypertarget{case-sensitivity}{%
+\section{Case sensitivity}\label{case-sensitivity}}
+
+\hypertarget{dateipfade}{%
+\section{Dateipfade}\label{dateipfade}}
+
+absolut vs.~relativ
+
+\hypertarget{verzeichnis--und-filenamen}{%
+\section{Verzeichnis- und Filenamen}\label{verzeichnis--und-filenamen}}
+
+keine leerzeichen, case sensitivity, Laufende Nummer oder Datum am Anfang, ISO8601 Datumsstandard
+
+\hypertarget{basics}{%
+\chapter{basics}\label{basics}}
+
+\hypertarget{hilfe}{%
+\section{hilfe}\label{hilfe}}
+
+\begin{verbatim}
+man befehl
+\end{verbatim}
+
+Hier wird die Dokumentation zu einer beliebigen Funktion aufgerufen.
+Um die Hilfeseite wieder zu verlassen den Buchstaben q eingeben.
+
+\hypertarget{print-working-directory.-wo-bin-ich}{%
+\section{print working directory. Wo bin ich?}\label{print-working-directory.-wo-bin-ich}}
+
+\begin{verbatim}
+pwd
+\end{verbatim}
+
+\hypertarget{list-files-and-directories.}{%
+\section{list files and directories.}\label{list-files-and-directories.}}
+
+\begin{verbatim}
+ls
+\end{verbatim}
+
+ein Element pro Zeile
+
+\begin{verbatim}
+ls -1
+\end{verbatim}
+
+auch versteckte Files (Dateiname mit vorangestelltem Punkt)
+
+\begin{verbatim}
+ls -a
+\end{verbatim}
+
+\hypertarget{change-directory}{%
+\section{change directory}\label{change-directory}}
+
+\begin{verbatim}
+cd pfad
+\end{verbatim}
+
+Der angegebene Dateipfad kann relativ oder absolut sein. Werden zwei Punkte als Pfad angegeben, wird ins übergeordnete Verzeichnis gewechselt.
+cd ohne pfad welchselt ins home verzeichnis.
+
+\hypertarget{move.-files-verschieben-bzw.-umbenennen.}{%
+\section{move. Files verschieben bzw. umbenennen.}\label{move.-files-verschieben-bzw.-umbenennen.}}
+
+\begin{verbatim}
+mv von nach
+\end{verbatim}
+
+\hypertarget{copy.-files-kopieren.}{%
+\section{copy. Files kopieren.}\label{copy.-files-kopieren.}}
+
+\begin{verbatim}
+cp von nach
+\end{verbatim}
+
+\hypertarget{remove.-files-loschen}{%
+\section{remove. Files löschen}\label{remove.-files-loschen}}
+
+Vorsicht! Gelöschte Files können nicht wieder hergestellt werden.
+Es ist daher besser die Files in den Papierkorb zu verschieben, diese
+können bei Bedarf (solange der Papierkorb nicht geleert wurde) wieder
+hergestellt werden.
+
+\begin{verbatim}
+trash file
+\end{verbatim}
+
+Hier kann statt file auch ein directory angegeben und in den Papierkorb verschoben werden.
+
+Files im Papierkorb können folgendermaßen angezeigt werden:
+
+\begin{verbatim}
+trash-list
+\end{verbatim}
+
+Der Papierkorb wird geleert mit:
+
+\begin{verbatim}
+trash-empty
+\end{verbatim}
+
+Zum wiederherstellen können files entweder manuell wieder
+aus dem trash folder zurück kopiert oder verschoben werden, bzw. kann man eine trash-operation auch rückgängig machen:
+
+\begin{verbatim}
+restore-empty
+\end{verbatim}
+
+Hier wird eine ``nummerierte'' liste der Trash Operationen ausgegeben. Durch Eingabe der entsprechenden Nummer und drücken der Enter Taste wird die
+Operation rückgängig gemacht.
+
+Sollte es trotz der damit verbundenen Gefahren aus irgendwelchen Gründen notwendig sein ein File
+komplett zu löschen und nicht in den Papierkorb zu verschieben kann das mit nachfolgenden Befehlen
+gemacht werden. Auch hier steht File für einen (absoluten oder relativen) Filepfad.
+
+\begin{verbatim}
+rm file
+\end{verbatim}
+
+Es kann auch ein gesamtes Verzeichnis gelöscht werden. Hier muss das Argument -r (rekursiv) verwendet werden, um das Verzeichnis
+samt Inhalt zu löschen.
+
+\begin{verbatim}
+rm -r directory
+\end{verbatim}
+
+\hypertarget{ordner-erstellen}{%
+\section{Ordner erstellen}\label{ordner-erstellen}}
+
+\begin{verbatim}
+mkdir verzeichnis
+\end{verbatim}
+
+\hypertarget{files-oder-verzeichnise-finden}{%
+\section{Files oder Verzeichnise finden}\label{files-oder-verzeichnise-finden}}
+
+\begin{verbatim}
+find verzeichnis -name suchname
+\end{verbatim}
+
+Im aktuellen Verzeichnis suchen:
+
+\begin{verbatim}
+find . -name suchname
+\end{verbatim}
+
+In home suchen:
+
+\begin{verbatim}
+find ~ -name suchname
+\end{verbatim}
+
+Case insensitive (ignoriert Groß- und Kleinschreibung):
+
+\begin{verbatim}
+find verzeichnis -iname suchname
+\end{verbatim}
+
+Mit Wilkcard suchen (z.B. alle Textfiles im Verzeichnis)
+
+\begin{verbatim}
+find verzeichnis -name *.txt
+\end{verbatim}
+
+Nur Files ausgeben
+
+\begin{verbatim}
+find verzeichnis -name suchname -type f
+\end{verbatim}
+
+Nur Verzeichnisse ausgeben
+
+\begin{verbatim}
+find verzeichnis -name suchname -type d
+\end{verbatim}
+
+\hypertarget{zip}{%
+\section{zip}\label{zip}}
+
+\hypertarget{mit-zip}{%
+\subsection{mit zip}\label{mit-zip}}
+
+Packen:
+
+\begin{verbatim}
+zip zipfile file1 file2 file 3
+\end{verbatim}
+
+Entpacken:
+
+\begin{verbatim}
+unzip zipfile
+\end{verbatim}
+
+Originale beim Packen nicht im Ordner belassen (move):
+
+\begin{verbatim}
+zip -m zipfile file1 file2 file 3
+\end{verbatim}
+
+\hypertarget{mit-gzip}{%
+\subsection{mit gzip}\label{mit-gzip}}
+
+\begin{verbatim}
+gzip file
+\end{verbatim}
+
+Zippen von Verzeichnissen inkl. aller Inhalte (rekursiv):
+
+\begin{verbatim}
+gzip -r verzeichnis
+\end{verbatim}
+
+Originaldatei soll erhalten bleiben (keep):
+
+\begin{verbatim}
+gzip -k file
+\end{verbatim}
+
+Entpacken:
+
+\begin{verbatim}
+gunzip file
+\end{verbatim}
+
+\hypertarget{filetype}{%
+\section{filetype}\label{filetype}}
+
+\begin{verbatim}
+file filename
+\end{verbatim}
+
+\hypertarget{als-superuser-ausfuhren}{%
+\section{als superuser ausführen}\label{als-superuser-ausfuhren}}
+
+\begin{verbatim}
+sudo befehl
+\end{verbatim}
+
+Manche programme muss man als superuser ausführen. Dazu stellt man sudo vor den Aufruf. Beim ersten mal je session wird man dann nach dem Passwort gefragt.
+
+\hypertarget{herunterfahren}{%
+\section{herunterfahren}\label{herunterfahren}}
+
+\begin{verbatim}
+sudo shutdown now
+\end{verbatim}
+
+Muss als superuser ausgeführt werden (\texttt{sudo}). Statt \texttt{now} kann auch anzahl an Minuten oder eine bestimmte Uhrzeit gegeben werden.
+
+\hypertarget{keyboard-shortcuts}{%
+\chapter{Keyboard shortcuts}\label{keyboard-shortcuts}}
+
+\hypertarget{braille-spezial}{%
+\section{Braille spezial}\label{braille-spezial}}
+
+chord Dot 1 bis 6 --\textgreater{} blinkender Cursor
+chord Dot 4 bis 5 --\textgreater{} Tab
+
+\hypertarget{unix-shell}{%
+\section{Unix Shell}\label{unix-shell}}
+
+strg + r --\textgreater{} suche
+strg + g --\textgreater{} suche abbrechen
+strg + c --\textgreater{} abbrechen
+strg + u --\textgreater{} clear characters left of cursor
+strg + w --\textgreater{} delete word left of cursor
+srg + l --\textgreater{} clear screen
+strg + y --\textgreater{} paste last cut or deleted text
+strg + a --\textgreater{} pos1
+strg + e --\textgreater{} end of line
+Ctrl + xx -- move between start of command line and current cursor position (and back again)
+Alt + b -- move backward one word (or go to start of word the cursor is currently on)
+Alt + f -- move forward one word (or go to end of word the cursor is currently on)
+
+\hypertarget{textbearbeitung}{%
+\chapter{Textbearbeitung}\label{textbearbeitung}}
+
+noch in Bearbeitung
+
+file
+nano
+
+\hypertarget{mailclient}{%
+\chapter{Mailclient}\label{mailclient}}
+
+Öffnen durch den Befehl
+
+\begin{verbatim}
+alpine
+\end{verbatim}
+
+Nach starten des Programms sollte der Cursor auf ``L Folder List'' stehen (bzw. vorher das Passwort abgefragt werden, sollte dieses nicht hinterlegt worden sein). In diesem ist auch die Inbox und diverese andere Folder enthalten. Zwei Zeilen darüber befindet sich ``C compose message'' um eine neue Nachricht zu verfassen. Beide Menüpunkte sind entweder durch hin navigieren und die Enter Taste oder auch über Eingabe der Buchstaben (\texttt{L} und \texttt{C}) zu öffnen.
+
+Aus den Unterordnern kann man mit \texttt{\textless{}} wieder jeweils eine Ebene höher navigieren. Außer beim Erstellen von Nachrichten kommt man so auch wieder ins Hauptmenü (bzw. auch durch die Eingabe von \texttt{m})
+
+\hypertarget{inbox-offnen}{%
+\section{Inbox öffnen}\label{inbox-offnen}}
+
+Eingabe von \texttt{L} und Navigation zu INBOX (öffnen mit \texttt{Enter}) bzw. falls man immer nur die Inbox verwendet auf dem Hauptmenü mit \texttt{I} zu den Nachrichten des (aktuellen) Folders gehen. Zur neuesten Mail gelangt man mit Eingabe der Taste \texttt{Ende}, mit \texttt{Tab} zur nächsten ungelesenen Nachricht.
+
+\hypertarget{anhang-downloaden}{%
+\section{Anhang downloaden}\label{anhang-downloaden}}
+
+In einer geöffneten Nachricht mit Anhang \texttt{v} drücken, dann mit den Pfeiltasten (rauf/runter) zum gewünschten Anhang navigieren und mit \texttt{s} speichern (Eingabe des Speicher-Filepfades und \texttt{Enter}).
+
+\hypertarget{nachrichten-suchen}{%
+\section{Nachrichten suchen}\label{nachrichten-suchen}}
+
+mit der taste \texttt{w} dann Eingabe des Suchbegriffs. Klickt man \texttt{Enter} hüpft der Cursor zur nächsten passenden Nachricht. Mit abwechselnd \texttt{w} und \texttt{Enter} kann man so von Nachricht zu Nachricht hüpfen.
+Wenn man nach Eingabe des Suchbegriffs stattdessen \texttt{strg\ +\ x} eingibt werden die Nachrichten im ``Zoom mode'' angezeigt, also jene auf die die Suche passt. Mit \texttt{z} kann man dann wieder aus dem Zoom-Mode raus aber auch wieder rein wechseln. In beiden Modi haben die Nachrichten eine Markierung \texttt{X} ganz links.
+
+\hypertarget{nachrichten-loschen}{%
+\section{Nachrichten löschen}\label{nachrichten-loschen}}
+
+Durch drücken von `d kann eine Nachricht zum löschen markiert werden (bzw. mit u die Markierung wieder aufgehoben werden). Beim schließen von alpine wird gefragt ob markierte Nachrichten gelöscht werden sollen.
+
+Mag man die Nachricht bzw. mehrere markierte Nachrichten gleich im Programm löschen drückt man \texttt{x}.
+
+\hypertarget{mail-beantworten}{%
+\section{Mail beantworten}\label{mail-beantworten}}
+
+Cursor auf die zu beantwortende Nachricht stellen und \texttt{r} drücken. Es wird nachgefragt, ob der Nachrichten-verlauf inkludiert werden soll - mit \texttt{y} bzw \texttt{Enter} bestätigen oder mit \texttt{n} ablehnen.
+Dann wird nachgefragt, ob allen Empfängern geantwortet werden soll.
+Danach gleich wie eine neue Nachricht erstellen.
+
+\hypertarget{nachricht-erstellen}{%
+\section{Nachricht erstellen}\label{nachricht-erstellen}}
+
+Im Hauptmenü ``C Compose message'' auswählen oder mit der Eingabe des Buchstabens \texttt{C} öffnen.
+
+Mehrere Empfänger sind mit Komma zu trennen.
+Ein Anhang kann mit \texttt{strg\ +\ J} ausgewählt werden.
+
+Ab dem Textfeld sind die Menüpunkte anders (fast wie im Texteditor nano). Mit \texttt{strg\ +\ x} wird die Nachricht gesendet, mit \texttt{strg\ +\ z} abgebrochen. Mit \texttt{strg\ +\ r} kann Text aus einem Textfile eingefügt werden (praktisch zur Verwendung mit Textbausteinen bzw. Standardantworten)
+
+Beim Senden der Abbrechen wird jeweils noch einmal nachgefragt. Beim senden kann man wie üblich \texttt{y} und \texttt{n} auswählen. Den Abbruch muss man mit \texttt{c} für confirm bestätigen.
+
+\hypertarget{alpine-beenden}{%
+\section{Alpine beenden}\label{alpine-beenden}}
+
+Aus fast allen Ebenen ist alpine durch die Eingabe des Buchstabens \texttt{q} gefolgt von Enter zu beenden (Außer man ist gerade dabei eine Nachricht zu verfassen. Diese zuerst abschicken oder mit \texttt{strg\ +\ C} abbrechen und dann alpine schließen).
+
+\hypertarget{webbrowser}{%
+\chapter{Webbrowser}\label{webbrowser}}
+
+\begin{verbatim}
+w3m website-url
+\end{verbatim}
+
+\hypertarget{hilfe-1}{%
+\section{Hilfe}\label{hilfe-1}}
+
+Im Browser öffnet man die Hilfeseite mit \texttt{shift\ +\ h}, in der alle Tastaturbefehle aufgelistet sind.
+
+\hypertarget{wichtigste-tastaturbefehle}{%
+\section{wichtigste Tastaturbefehle}\label{wichtigste-tastaturbefehle}}
+
+Hilfe: \texttt{shift\ +\ h}
+Website (URL) aufrufen: \texttt{shift\ +\ u}
+zurück: \texttt{shift\ +\ b}
+neuen Tab öffnen: \texttt{shift\ +\ t}
+link in neuem tab öffnen: \texttt{strg\ +\ t}
+tabs wechseln: \texttt{\{} und \texttt{\}}
+tabs wechseln, Liste: \texttt{Esc\ +\ t}
+nächster Hyperlink: \texttt{Tab}
+suche: \texttt{strg\ +\ s} dann \texttt{n} um zum nächsten Treffer zu gelangen
+Ansicht um einen screen nach unten: \texttt{strg\ +\ v} oder \texttt{+} oder \texttt{space}
+Ansicht um einen screen nach obne: \texttt{b} oder \texttt{-}
+Liste aller Links der Seite \texttt{Esc\ +\ l}
+
+\hypertarget{wifi.-network-manager-commandline-interface}{%
+\chapter{Wifi. network manager commandline interface}\label{wifi.-network-manager-commandline-interface}}
+
+\hypertarget{welche-wifi-netzwerke-sind-verfugbar}{%
+\section{Welche Wifi Netzwerke sind verfügbar?}\label{welche-wifi-netzwerke-sind-verfugbar}}
+
+\begin{verbatim}
+nmcli dev wifi
+\end{verbatim}
+
+\hypertarget{aktive-verbindung}{%
+\section{aktive Verbindung}\label{aktive-verbindung}}
+
+\begin{verbatim}
+nmcli con show
+\end{verbatim}
+
+\hypertarget{mit-einem-wifi-netzwerk-verbinden}{%
+\section{mit einem wifi Netzwerk verbinden}\label{mit-einem-wifi-netzwerk-verbinden}}
+
+\begin{verbatim}
+nmcli device wifi connect <SSID> password <Passwort>
+\end{verbatim}
+
+bzw. über ein User Interface:
+
+Verbindung im User Interface herstellen:
+
+\begin{verbatim}
+nmtui-connect
+\end{verbatim}
+
+Verbindung im User Interface ändern:
+
+\begin{verbatim}
+nmtui-edit
+\end{verbatim}
+
+\hypertarget{bluetooth}{%
+\chapter{Bluetooth}\label{bluetooth}}
+
+noch in Bearbeitung
+
+bluetoothctl
+
+\hypertarget{pdf-html-und-word-dokumente-erstellen-mit-markdown}{%
+\chapter{PDF, HTML und Word Dokumente erstellen mit Markdown}\label{pdf-html-und-word-dokumente-erstellen-mit-markdown}}
+
+\hypertarget{markdown-syntax}{%
+\section{Markdown syntax}\label{markdown-syntax}}
+
+\begin{verbatim}
+w3m https://www.markdownguide.org/cheat-sheet/
+\end{verbatim}
+
+\begin{verbatim}
+![](file.jpg){ width=50% }
+\end{verbatim}
+
+\hypertarget{yaml-header}{%
+\section{Yaml header}\label{yaml-header}}
+
+\begin{verbatim}
+---
+title:
+author:
+date:
+---
+\end{verbatim}
+
+\hypertarget{pandoc}{%
+\section{Pandoc}\label{pandoc}}
+
+\begin{verbatim}
+pandoc document.md -s -o document.docx
+\end{verbatim}
+
+\begin{verbatim}
+pandoc document.md -s -o document.pdf
+\end{verbatim}
+
+\#Audio
+noch in Bearbeitung
+
+omxplayer
+
+\hypertarget{youtube}{%
+\chapter{Youtube}\label{youtube}}
+
+noch in Bearbeitung
+
+\url{https://www.raspberrypi.org/forums/viewtopic.php?t=8157}
+
+\url{https://github.com/StevenHickson/PiAUISuite/blob/master/Youtube/youtube-safe}
+
+\url{https://www.ismoothblog.com/2016/10/watch-youtube-videos-on-raspberry-pi.html}
+
+This is a minimal example of a book based on R Markdown and \textbf{bookdown} (\url{https://github.com/rstudio/bookdown}). Please see the page ``\href{https://bookdown.org/yihui/bookdown/get-started.html}{Get Started}'' at \url{https://bookdown.org/yihui/bookdown/} for how to compile this example into HTML. You may generate a copy of the book in \texttt{bookdown::pdf\_book} format by calling \texttt{bookdown::render\_book(\textquotesingle{}index.Rmd\textquotesingle{},\ \textquotesingle{}bookdown::pdf\_book\textquotesingle{})}. More detailed instructions are available here \url{https://bookdown.org/yihui/bookdown/build-the-book.html}.
+
+You can find the preview of this example at \url{https://bookdown.org/yihui/bookdown-demo/}.
+
+\bibliography{book.bib}
+
+
+\end{document}

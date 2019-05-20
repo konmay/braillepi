@@ -1,0 +1,5 @@
+book_filename: "Braillepi"
+language:
+  ui:
+    chapter_name: "Abschnitt "
+delete_merged_file: true

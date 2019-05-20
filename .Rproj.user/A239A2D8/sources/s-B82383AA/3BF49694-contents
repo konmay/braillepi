@@ -1,0 +1,29 @@
+# Wifi. network manager commandline interface
+
+## Welche Wifi Netzwerke sind verfügbar?
+```
+nmcli dev wifi
+```
+
+## aktive Verbindung
+```
+nmcli con show
+```
+
+## mit einem wifi Netzwerk verbinden
+
+```
+nmcli device wifi connect <SSID> password <Passwort>
+```
+
+bzw. über ein User Interface:
+
+Verbindung im User Interface herstellen:
+```
+nmtui-connect
+```
+
+Verbindung im User Interface ändern:
+```
+nmtui-edit
+```
