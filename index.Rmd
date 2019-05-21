@@ -12,3 +12,7 @@ github-repo: konradmayer/braillepi
 description: ""
 ---
 
+
+# Braillepi
+Dieses Ebook ist eine Kurzanleitung für die Verwendung eines Raspberry Pi Zero W an einer Braillezeile (optimiert auf Freedom Scientific Focus 40).
+Hier wird in Zukunft eine detailliertere Beschreibung des Projektes zu finden sein.

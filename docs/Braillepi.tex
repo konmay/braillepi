@@ -85,7 +85,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-05-20}
+    \date{2019-05-21}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -103,23 +103,60 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
+\hypertarget{braillepi}{%
+\chapter{Braillepi}\label{braillepi}}
+
+Dieses Ebook ist eine Kurzanleitung für die Verwendung eines Raspberry Pi Zero W an einer Braillezeile (optimiert auf Freedom Scientific Focus 40).
+Hier wird in Zukunft eine detailliertere Beschreibung des Projektes zu finden sein.
+
 \hypertarget{best-practices}{%
 \chapter{Best practices}\label{best-practices}}
 
-dieser Abschnitt ist noch in Bearbeitung
+Diese Hinweise sind für die Arbeit mit allen Betriebssystemen zu empfehlen - einige davon (case sensitivity, Leerzeichen) sind für die Arbeit mit der Kommandozeile unbedingt notwendig!
 
 \hypertarget{case-sensitivity}{%
 \section{Case sensitivity}\label{case-sensitivity}}
 
+Linux-Systeme sind case sensitiv, das heißt Groß- und Kleinschreibung wird unterschieden! Bei Verwendung einer Braillezeile bzw. Sprachausgabe ist es sinnvoll, nur Kleinbuchstaben zu verwenden.
+
 \hypertarget{dateipfade}{%
 \section{Dateipfade}\label{dateipfade}}
 
-absolut vs.~relativ
+Befehle auf der Kommandozeile akzeptieren meist relative oder absolute Dateipfade. Relative Dateipfade beziehen sich auf das aktuelle working directory (\texttt{pwd}), absolute dateipfade beziehen sich auf die Wurzel (root directory) des Dateisystems.
+
+Ich kann zum Beispiel die Datei \texttt{beispiel.txt} vom directory \texttt{/home/pi} in den Unterordner \texttt{beispielordner} mit absoluten Dateipfaden verschieben, ganz egal was mein aktuelles working directory gerade ist.
+
+\begin{verbatim}
+mv /home/pi/beispiel.txt /home/pi/beispielordner/beispiel.txt
+\end{verbatim}
+
+Wenn mein aktuelles working directory gerade \texttt{/home/pi} ist, kann ich einen relativen Dateipfad verwenden:
+
+\begin{verbatim}
+mv beispiel.txt beispielordner/beispiel.txt
+\end{verbatim}
 
 \hypertarget{verzeichnis--und-filenamen}{%
 \section{Verzeichnis- und Filenamen}\label{verzeichnis--und-filenamen}}
 
-keine leerzeichen, case sensitivity, Laufende Nummer oder Datum am Anfang, ISO8601 Datumsstandard
+Es ist unbedingt notwendig, dass bei Verzeichnis und Filenamen
+
+\begin{itemize}
+\tightlist
+\item
+  keine Leerzeichen (Space) verwendet werden
+\item
+  auf Groß- und Kleinschreibung (case sensitivity) geachtet wird
+\end{itemize}
+
+Des weiteren ist es gute Praxis, dass Files mit laufenden Nummern bzw. Datum, diese am Anfang des Filenamens stehen um sie besser sortierbar zu machen. Bei Verwendung eines Datums empfiehlt sich ein Format mit Jahr am Anfang und Tag am Schluss (YYYY-MM-DD), da bei diesem Standard (ISO8601) Bindestriche verwendet werden um das Datum zu verbinden ist es generell sinnvoll zusammengehörige Informationen im Filenamen mit Bindestrichen (sozusagen als Ersatz für das Leerzeichen), nicht mehr zusammen gehörende Informationen mit Unterstrichen zu verbinden.
+Punkte und Sonderzeichen sollte man in File und Dateinamen generell vermeiden, auch wenn sie zum Teil erlaubt sind.
+
+Hier ein Beispiel für einen guten Dateinamen:
+
+\begin{verbatim}
+2019-05-21_braillepi-manual.txt
+\end{verbatim}
 
 \hypertarget{basics}{%
 \chapter{basics}\label{basics}}
@@ -365,24 +402,24 @@ Muss als superuser ausgeführt werden (\texttt{sudo}). Statt \texttt{now} kann a
 \hypertarget{braille-spezial}{%
 \section{Braille spezial}\label{braille-spezial}}
 
-chord Dot 1 bis 6 --\textgreater{} blinkender Cursor
-chord Dot 4 bis 5 --\textgreater{} Tab
+\texttt{chord\ Dot\ 1\ bis\ 6} : blinkender Cursor\\
+\texttt{chord\ Dot\ 4\ bis\ 5} : Tab
 
 \hypertarget{unix-shell}{%
 \section{Unix Shell}\label{unix-shell}}
 
-strg + r --\textgreater{} suche
-strg + g --\textgreater{} suche abbrechen
-strg + c --\textgreater{} abbrechen
-strg + u --\textgreater{} clear characters left of cursor
-strg + w --\textgreater{} delete word left of cursor
-srg + l --\textgreater{} clear screen
-strg + y --\textgreater{} paste last cut or deleted text
-strg + a --\textgreater{} pos1
-strg + e --\textgreater{} end of line
-Ctrl + xx -- move between start of command line and current cursor position (and back again)
-Alt + b -- move backward one word (or go to start of word the cursor is currently on)
-Alt + f -- move forward one word (or go to end of word the cursor is currently on)
+\texttt{strg\ +\ r} : suche\\
+\texttt{strg\ +\ g} : suche abbrechen\\
+\texttt{strg\ +\ c} : abbrechen\\
+\texttt{strg\ +\ u} : clear characters left of cursor\\
+\texttt{strg\ +\ w} : delete word left of cursor\\
+\texttt{strg\ +\ l} : clear screen\\
+\texttt{strg\ +\ y} : paste last cut or deleted text\\
+\texttt{strg\ +\ a} : pos1\\
+\texttt{strg\ +\ e} : end of line\\
+\texttt{strg\ +\ xx} : move between start of command line and current cursor position (and back again)\\
+\texttt{Alt\ +\ b} : move backward one word (or go to start of word the cursor is currently on)\\
+\texttt{Alt\ +\ f} : move forward one word (or go to end of word the cursor is currently on)
 
 \hypertarget{textbearbeitung}{%
 \chapter{Textbearbeitung}\label{textbearbeitung}}
@@ -467,17 +504,17 @@ Im Browser öffnet man die Hilfeseite mit \texttt{shift\ +\ h}, in der alle Tast
 \hypertarget{wichtigste-tastaturbefehle}{%
 \section{wichtigste Tastaturbefehle}\label{wichtigste-tastaturbefehle}}
 
-Hilfe: \texttt{shift\ +\ h}
-Website (URL) aufrufen: \texttt{shift\ +\ u}
-zurück: \texttt{shift\ +\ b}
-neuen Tab öffnen: \texttt{shift\ +\ t}
-link in neuem tab öffnen: \texttt{strg\ +\ t}
-tabs wechseln: \texttt{\{} und \texttt{\}}
-tabs wechseln, Liste: \texttt{Esc\ +\ t}
-nächster Hyperlink: \texttt{Tab}
-suche: \texttt{strg\ +\ s} dann \texttt{n} um zum nächsten Treffer zu gelangen
-Ansicht um einen screen nach unten: \texttt{strg\ +\ v} oder \texttt{+} oder \texttt{space}
-Ansicht um einen screen nach obne: \texttt{b} oder \texttt{-}
+Hilfe: \texttt{shift\ +\ h}\\
+Website (URL) aufrufen: \texttt{shift\ +\ u}\\
+zurück: \texttt{shift\ +\ b}\\
+neuen Tab öffnen: \texttt{shift\ +\ t}\\
+link in neuem tab öffnen: \texttt{strg\ +\ t}\\
+tabs wechseln: \texttt{\{} und \texttt{\}}\\
+tabs wechseln, Liste: \texttt{Esc\ +\ t}\\
+nächster Hyperlink: \texttt{Tab}\\
+suche: \texttt{strg\ +\ s} dann \texttt{n} um zum nächsten Treffer zu gelangen\\
+Ansicht um einen screen nach unten: \texttt{strg\ +\ v} oder \texttt{+} oder \texttt{space}\\
+Ansicht um einen screen nach obne: \texttt{b} oder \texttt{-}\\
 Liste aller Links der Seite \texttt{Esc\ +\ l}
 
 \hypertarget{wifi.-network-manager-commandline-interface}{%
@@ -561,7 +598,9 @@ pandoc document.md -s -o document.docx
 pandoc document.md -s -o document.pdf
 \end{verbatim}
 
-\#Audio
+\hypertarget{audio}{%
+\chapter{Audio}\label{audio}}
+
 noch in Bearbeitung
 
 omxplayer
@@ -576,6 +615,12 @@ noch in Bearbeitung
 \url{https://github.com/StevenHickson/PiAUISuite/blob/master/Youtube/youtube-safe}
 
 \url{https://www.ismoothblog.com/2016/10/watch-youtube-videos-on-raspberry-pi.html}
+
+\hypertarget{sprachausgabe}{%
+\chapter{Sprachausgabe}\label{sprachausgabe}}
+
+Dieser Abschnitt ist noch in Bearbeitung
+festival
 
 This is a minimal example of a book based on R Markdown and \textbf{bookdown} (\url{https://github.com/rstudio/bookdown}). Please see the page ``\href{https://bookdown.org/yihui/bookdown/get-started.html}{Get Started}'' at \url{https://bookdown.org/yihui/bookdown/} for how to compile this example into HTML. You may generate a copy of the book in \texttt{bookdown::pdf\_book} format by calling \texttt{bookdown::render\_book(\textquotesingle{}index.Rmd\textquotesingle{},\ \textquotesingle{}bookdown::pdf\_book\textquotesingle{})}. More detailed instructions are available here \url{https://bookdown.org/yihui/bookdown/build-the-book.html}.
 

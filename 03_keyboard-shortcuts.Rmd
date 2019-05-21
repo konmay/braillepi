@@ -2,22 +2,21 @@
 
 ## Braille spezial
 
-chord Dot 1 bis 6 --> blinkender Cursor
-chord Dot 4 bis 5 --> Tab
+`chord Dot 1 bis 6` :  blinkender Cursor  
+`chord Dot 4 bis 5` :  Tab  
 
 
 ## Unix Shell
 
-
-strg + r --> suche
-strg + g --> suche abbrechen
-strg + c --> abbrechen
-strg + u --> clear characters left of cursor
-strg + w --> delete word left of cursor
-srg + l -->  clear screen
-strg + y --> paste last cut or deleted text
-strg + a --> pos1
-strg + e --> end of line
-Ctrl + xx – move between start of command line and current cursor position (and back again)
-Alt + b – move backward one word (or go to start of word the cursor is currently on)
-Alt + f – move forward one word (or go to end of word the cursor is currently on)
+`strg + r` :  suche  
+`strg + g` :  suche abbrechen  
+`strg + c` :  abbrechen  
+`strg + u` :  clear characters left of cursor  
+`strg + w` :  delete word left of cursor  
+`strg + l` :   clear screen  
+`strg + y` :  paste last cut or deleted text  
+`strg + a` :  pos1  
+`strg + e` :  end of line  
+`strg + xx` : move between start of command line and current cursor position (and back again)  
+`Alt + b` : move backward one word (or go to start of word the cursor is currently on)  
+`Alt + f` : move forward one word (or go to end of word the cursor is currently on)  

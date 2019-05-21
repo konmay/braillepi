@@ -1,0 +1,36 @@
+# Best practices
+Diese Hinweise sind für die Arbeit mit allen Betriebssystemen zu empfehlen - einige davon (case sensitivity, Leerzeichen) sind für die Arbeit mit der Kommandozeile unbedingt notwendig!
+
+## Case sensitivity
+Linux-Systeme sind case sensitiv, das heißt Groß- und Kleinschreibung wird unterschieden! Bei Verwendung einer Braillezeile bzw. Sprachausgabe ist es sinnvoll, nur Kleinbuchstaben zu verwenden.
+
+## Dateipfade
+Befehle auf der Kommandozeile akzeptieren meist relative oder absolute Dateipfade. Relative Dateipfade beziehen sich auf das aktuelle working directory (`pwd`), absolute dateipfade beziehen sich auf die Wurzel (root directory) des Dateisystems.
+
+Ich kann zum Beispiel die Datei `beispiel.txt` vom directory `/home/pi` in den Unterordner `beispielordner` mit absoluten Dateipfaden verschieben, ganz egal was mein aktuelles working directory gerade ist.
+
+```
+mv /home/pi/beispiel.txt /home/pi/beispielordner/beispiel.txt
+```
+
+Wenn mein aktuelles working directory gerade `/home/pi` ist, kann ich einen relativen Dateipfad verwenden:
+
+```
+mv beispiel.txt beispielordner/beispiel.txt
+```
+
+## Verzeichnis- und Filenamen
+
+Es ist unbedingt notwendig, dass bei Verzeichnis und Filenamen
+
+- keine Leerzeichen (Space) verwendet werden
+- auf Groß- und Kleinschreibung (case sensitivity) geachtet wird
+
+Des weiteren ist es gute Praxis, dass Files mit laufenden Nummern bzw. Datum, diese am Anfang des Filenamens stehen um sie besser sortierbar zu machen. Bei Verwendung eines Datums empfiehlt sich ein Format mit Jahr am Anfang und Tag am Schluss (YYYY-MM-DD), da bei diesem Standard (ISO8601) Bindestriche verwendet werden um das Datum zu verbinden ist es generell sinnvoll zusammengehörige Informationen im Filenamen mit Bindestrichen (sozusagen als Ersatz für das Leerzeichen), nicht mehr zusammen gehörende Informationen mit Unterstrichen zu verbinden. 
+Punkte und Sonderzeichen sollte man in File und Dateinamen generell vermeiden, auch wenn sie zum Teil erlaubt sind.
+
+Hier ein Beispiel für einen guten Dateinamen:
+
+```
+2019-05-21_braillepi-manual.txt
+```
